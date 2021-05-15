@@ -1,0 +1,27 @@
+// https://cdn-api.co-vin.in/api/v2/admin/location/states
+-----------------------------Haryana(12)------------------------------------
+
+{
+  "district_id": 188,
+  "district_name": "Gurgaon"
+},
+{
+  "district_id": 206,
+  "district_name": "Mahendragarh"
+},
+{
+  "district_id": 205,
+  "district_name": "Nuh"
+}
+{
+  "district_id": 202,
+  "district_name": "Rewari"
+}
+
+ ----------------------------Rajasthan(29)--------------------------------------
+
+{
+  "district_id": 512,
+  "district_name": "Alwar"
+}
+
