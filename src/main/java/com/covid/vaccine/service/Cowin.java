@@ -53,7 +53,7 @@ public class Cowin {
                     ArrayList sessions = (ArrayList) ((HashMap) center).get("sessions");
                     ((ArrayList) center.get("sessions")).forEach(session -> {
                         Integer age_limit = (Integer) ((HashMap) sessions.get(0)).get("min_age_limit");
-                        Integer available_capacity = (Integer) ((HashMap) session).get("available_capacity");
+                        Integer available_capacity = (Integer) ((HashMap) session).get("available_capacity_dose1");
                         if (age_limit == 18 && available_capacity > 0) {
                             VaccineTelegramDTO vaccineTelegramDTO = VaccineTelegramDTO.builder()
                                     .address((String) ((HashMap) center).get("address"))
@@ -61,6 +61,7 @@ public class Cowin {
                                     .pinCode(String.valueOf(((HashMap) center).get("pincode")))
                                     .district((String) ((HashMap) center).get("district_name"))
                                     .build();
+                            System.out.println(vaccineTelegramDTO.toString());
                             vaccineTelegramDTOS.add(vaccineTelegramDTO);
                         }
                     });
@@ -87,7 +88,6 @@ public class Cowin {
         httpGet.setHeader("origin", "https://apisetu.gov.in");
         httpGet.setHeader("referer", "https://apisetu.gov.in/public/marketplace/api/cowin");
         httpGet.setHeader("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36");
-        System.out.println(EntityUtils.toString(httpClient.execute(httpGet).getEntity()));
         return httpClient.execute(httpGet);
     }
 }

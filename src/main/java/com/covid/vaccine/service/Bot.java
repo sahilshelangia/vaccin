@@ -25,6 +25,7 @@ public class Bot {
                }
                telegram.sendMessage(message);
             }
+            System.out.println("Checking for slot!");
             Thread.sleep(10000);
         }
     }
